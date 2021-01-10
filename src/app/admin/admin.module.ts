@@ -1,3 +1,4 @@
+import { SearchPipe } from './shared/pipes/search.pipe';
 import { SharedModule } from './../shared/shared.module';
 import { AuthService } from './shared/services/auth.service';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
