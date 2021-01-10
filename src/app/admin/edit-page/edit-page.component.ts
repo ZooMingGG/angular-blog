@@ -1,3 +1,4 @@
+import { AlertService } from './../shared/services/alert.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from './../../shared/interfaces';
 import { PostService } from './../../shared/services/post.service';
@@ -21,7 +22,8 @@ export class EditPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private postService: PostService
+    private postService: PostService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +60,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
       title: this.form.value.title,
     }).subscribe(() => {
       this.submitted = false;
+      this.alertService.success('Post hase been updated');
     });
   }
 
